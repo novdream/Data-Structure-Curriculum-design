@@ -1,0 +1,69 @@
+body{
+    background-image: linear-gradient(150deg,#d299c2,#fef9d7);
+    box-sizing: border-box;
+    list-style: none;
+}
+.content{
+   
+    position: absolute;
+    margin: 60px auto;
+    width: 255px;
+    height: 30px;
+    
+}
+.btn{
+    position: relative;
+    color:white;
+    border:1px solid black;
+    background-size: 400%;
+    background-image: linear-gradient(to left, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    border-radius: 40px;
+    width: 250px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    cursor:pointer;
+    z-index: 1;
+}
+.btn::before{
+    content:'';
+    position: absolute;
+    top:-4px;
+    left:-2px;
+    width: 260px;
+    height: 70px;
+    background-size: 400%;
+    border-radius: 40px;
+    background-image: linear-gradient(to left, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    filter: blur(10px);
+    z-index: -1;
+}
+.btn:hover{
+    animation: flow 5s infinite;
+}
+.btn:hover::before{
+    animation: flow 5s infinite;
+}
+@keyframes flow{
+    100%{
+        background-position:-400% 0;
+    }
+   
+}
+.content .btn i{
+    color:black;
+    font-size: larger;
+}
+input{
+    position: absolute;
+}
+#keybutton{
+    margin-top:600px;
+    left:50%;
+    margin-left: -112px;
+}
+#tree{
+    margin-top:700px;
+    left:50%;
+    margin-left: -112px;
+}

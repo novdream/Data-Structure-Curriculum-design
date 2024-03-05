@@ -1,0 +1,103 @@
+
+@font-face {
+    font-family: "阿里妈妈刀隶体 Regular";
+    font-weight: 400;
+    src: url("../fonts/uX1dyskMPQZj.woff2") format("woff2"),
+    url("../fonts/uX1dyskMPQZj.woff") format("woff");
+    font-display: swap;
+  }
+body{
+    background-image: linear-gradient(150deg,#d299c2,#fef9d7);
+    box-sizing: border-box;
+    list-style: none;
+    
+}
+a{
+    text-decoration: none;
+    color:black;
+    
+}
+.image{
+     /*文字*/
+    font-size: larger;
+    line-height: 150px;
+    text-align: center;
+    font-family: "阿里妈妈刀隶体 Regular";
+   
+    /*定位*/
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    background-image: radial-gradient(circle at 75% 30%,#fff 5px,#ff21c0 8%,#5b5b5b 60%,#ff21c0 100%);
+    box-shadow: inset 0 0 20px #fff ,
+                inset 10px 0 46px #eaf5fc,
+                inset 80px 0 60px #efcde6,
+                inset -20px -60px 100px #f9f6de,
+                inset 0 50px 140px #f9f6de, 0 0 90px #fff;
+}
+.location{
+    top:50%;
+    left:50%;
+}
+
+.option{
+    left:var(--h);
+    top:var(--l);
+    transition:all var(--s);
+    opacity: 0;
+} 
+@keyframes bubble{
+    0%, 100%{
+       top:50%;
+    }
+   50%{
+        top:40%;
+    }
+}
+@keyframes stop{
+    0%, 100%{
+       top:50%;
+    }
+}
+.shadow{
+    background-color: rgba(0,0,0,0.15);
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-top: 140px;
+    margin-left: -70px;
+    width: 150px;
+    height: 40px;
+    border-radius: 50%;
+    animation: shrink 3s ease-in-out infinite;
+}
+@keyframes shrink{
+    0%, 100%{
+       transform:scale(1) ;
+    }
+   50%{
+        transform:scale(0.8);
+    }
+}
+/* 移动出现菜单 */
+.menu:hover{
+   animation-play-state: paused;
+}
+.menu:hover .option{
+    opacity: 1;
+    
+ }
+ a:hover{
+    color:#f19305;
+ }
+    
+
+.menu:hover +.shadow{
+    animation-play-state: paused;
+    opacity: 0;
+}
+body .menu{
+    animation: bubble 3s ease-in-out infinite;
+}
